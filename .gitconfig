@@ -1,0 +1,13 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Artem Kiselev
+	email = kiselevart1403@gmail.com
+	signingkey = 7AEF854697F72ECC1562B17077B652B17712B5F3
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
