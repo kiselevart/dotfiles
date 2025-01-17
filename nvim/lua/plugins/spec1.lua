@@ -24,11 +24,25 @@ return {
     },
   },
   {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "echasnovski/mini.icons" },
+    opts = {}
+  },
+  {
+    'dccsillag/magma-nvim', run = 'UpdateRemotePlugins'
+  },
+  {
+    dir = "~/projects/nvim-discord-rpc/"
+  },
+  {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     dependencies= { 'nvim-lua/plenary.nvim' }
   },
-  { 
-    "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" 
+  {
+    "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -37,7 +51,17 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
-    }
+    },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            visible = true,    -- Show hidden files
+            hide_dotfiles = false, -- Show dotfiles (hidden files)
+          },
+        },
+      })
+    end
   },
   {
     'nanotee/zoxide.vim',

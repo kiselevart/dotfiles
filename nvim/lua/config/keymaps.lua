@@ -8,8 +8,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 local config = require('nvim-treesitter.configs')
 config.setup({
-  ensure_installed = {"lua", "javascript", "c", "rust", "python"}, 
-  highlight = { enable = true }, 
+  ensure_installed = {"lua", "javascript", "c", "rust", "python"},
+  highlight = { enable = true },
   indent = { enable = true },
 })
 
