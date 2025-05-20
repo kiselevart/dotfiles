@@ -6,7 +6,7 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme tokyonight-night]])
     end,
   },
   -- I have a separate config.mappings file where I require which-key.
@@ -24,6 +24,13 @@ return {
     },
   },
   {
+    "let-def/texpresso.vim",
+    ft = "tex",
+    config = function()
+      require("texpresso").texpresso_path = "/home/texpresso/build/texpresso" -- Set the correct binary path
+    end,
+  },
+  {
     "ibhagwan/fzf-lua",
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -32,11 +39,23 @@ return {
     opts = {}
   },
   {
-    'dccsillag/magma-nvim', run = 'UpdateRemotePlugins'
+    'hrsh7th/nvim-cmp',          -- Autocompletion plugin
+    dependencies = {
+    'hrsh7th/cmp-nvim-lsp',    -- LSP source for nvim-cmp
+    'hrsh7th/cmp-buffer',      -- Buffer source for nvim-cmp
+    'hrsh7th/cmp-path',        -- Path source for nvim-cmp
+    'hrsh7th/cmp-cmdline',     -- Command-line source for nvim-cmp
+    'saadparwaiz1/cmp_luasnip',-- Snippet source for nvim-cmp
+    'L3MON4D3/LuaSnip',        -- Snippet engine
+    'rafamadriz/friendly-snippets', -- Collection of snippets
+  }
   },
   {
-    dir = "~/projects/nvim-discord-rpc/"
+    'dccsillag/magma-nvim', run = 'UpdateRemotePlugins'
   },
+  --{
+  --  dir = "~/projects/nvim-discord-rpc/"
+  -- },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     dependencies= { 'nvim-lua/plenary.nvim' }

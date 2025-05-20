@@ -1,13 +1,13 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set relativenumber")
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.relativenumber = true
 
-vim.o.termguicolors = true
-vim.o.completeopt = "menu,menuone,noselect"
+vim.opt.termguicolors = true
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
-vim.api.nvim_set_option("clipboard", "unnamed")
+vim.opt.clipboard = "unnamedplus"
 
 require("config.lazy")
 require("config.keymaps")
