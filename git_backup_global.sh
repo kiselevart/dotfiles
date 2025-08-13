@@ -8,9 +8,6 @@ repos=(
   "$HOME/leetcode"
   "$HOME/obsidian"
   "$HOME/papers"
-  "$HOME/uni/complex"
-  "$HOME/uni/numcomp"
-  "$HOME/uni/apal"
   # Add more paths as needed
 )
 
