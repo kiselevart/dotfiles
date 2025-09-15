@@ -3,9 +3,8 @@
 # Hardcoded repository paths
 repos=(
   "$HOME/books"
-  "$HOME/dotfiles"
-  "$HOME/hackerrank"
-  "$HOME/leetcode"
+  "$HOME/misc/dotfiles"
+  "$HOME/comp-prog"
   "$HOME/obsidian"
   "$HOME/papers"
   # Add more paths as needed
